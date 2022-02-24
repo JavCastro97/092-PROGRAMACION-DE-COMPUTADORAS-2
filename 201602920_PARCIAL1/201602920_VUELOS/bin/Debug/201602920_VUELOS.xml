@@ -1,0 +1,31 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+201602920_VUELOS
+</name>
+</assembly>
+<members>
+<member name="T:_201602920_VUELOS.My.Resources.Resources">
+<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member>
+<member name="P:_201602920_VUELOS.My.Resources.Resources.ResourceManager">
+<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member>
+<member name="P:_201602920_VUELOS.My.Resources.Resources.Culture">
+<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member>
+<member name="P:_201602920_VUELOS.My.Resources.Resources.banner_de_fondo_mínimo_para_viajes_modelo_avión_en_vuelo_un_color_vacío_copiar_espacio_170421780">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+</members>
+</doc>
