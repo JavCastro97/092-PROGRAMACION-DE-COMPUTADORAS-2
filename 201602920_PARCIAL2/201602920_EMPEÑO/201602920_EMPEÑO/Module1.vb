@@ -16,12 +16,12 @@
     Public Const descuentoLPTL = 0.1
 
     Public CLIENTE As Byte = 0
-    Public MATRIZ(6, 8)
+    'Public MATRIZ(6, 8)
 
     Public NOMBRE(6) As String
     Public CUI(6) As Double
     Public DIRECCION(6) As String
-    Public PLAZO(6) As String
+    Public PLAZO(6) As Double
     Public ARTICULO(6) As String
     Public COSTO(6) As Double
     Public PARCIAL(6) As Double
@@ -42,9 +42,9 @@
         Form1.TextBoxCosto.Text = 0.0
     End Sub
 
-    Sub Limpiar_Matriz()
-        ReDim MATRIZ(6, 8)
-    End Sub
+    'Sub Limpiar_Matriz()
+    '    ReDim MATRIZ(6, 8)
+    'End Sub
 
 
     Sub Salir()

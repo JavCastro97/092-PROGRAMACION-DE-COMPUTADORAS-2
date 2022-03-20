@@ -2,21 +2,11 @@
 Public Class Form1
 
     Private Sub CALCULARToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CALCULARToolStripMenuItem.Click
-        If RBCorto.Checked = False Or RBLargo.Checked = False Then
-            MsgBox("POR FAVOR, SELECCIONE EL TIPO DE PLAZO DE EMPEÑO DEL ARTÍCULO")
-            Exit Sub
-        End If
-
-        If CBTV.Checked = False And CBTelefono.Checked = False And CBLaptop.Checked = False And CBRefrigeradora.Checked Then
-            MsgBox("POR FAVOR, SELECCIONE UN ARTÍCULO") : Exit Sub
-        End If
-
-        If CLIENTE < 6 Then
-            MATRIZ(CLIENTE, 0) = CLIENTE + 1
+        If CLIENTE <= 6 Then
+            CLIENTE = CLIENTE + 1
             'SE PROCEDE A VERIFICAR QUE SE HAYA INGRESADO UN NOMBRE 
             If (TextBoxNombre.Text <> "") Then
                 NOMBRE(CLIENTE) = (TextBoxNombre.Text)
-                MATRIZ(CLIENTE, 0) = NOMBRE(CLIENTE)
             Else
                 MsgBox("Por favor, ingrese un nombre")
                 TextBoxNombre.Focus()
@@ -26,7 +16,7 @@ Public Class Form1
             'SE PROCEDE A VERIFICAR QUE SE HAYA INGRESADO UN NOMBRE 
             If (IsNumeric(TextBoxCUI.Text <> "")) And (Val(TextBoxCUI.Text) > 0) Then
                 CUI(CLIENTE) = Val(TextBoxCUI.Text)
-                MATRIZ(CLIENTE, 1) = CUI(CLIENTE)
+
             Else
                 MsgBox("Por favor ingrese No. de CUI")
                 TextBoxCUI.Focus() : Exit Sub
@@ -41,35 +31,66 @@ Public Class Form1
                 DIRECCION(CLIENTE) = "" : Exit Sub
             End If
 
-            Select Case PLAZO(8)
-                Case "TV"
-                    If RBCorto.Checked Then
-                        If CBTV.Checked Then
-                            PARCIAL(CLIENTE) = CortoTV
-                        ElseIf CBTelefono.Checked Then
-                            PARCIAL(CLIENTE) = CortoTelefono
-                        ElseIf CBLaptop.Checked Then
-                            PARCIAL(CLIENTE) = CortoLaptop
-                        ElseIf CBRefrigeradora.Checked Then
-                            PARCIAL(CLIENTE) = CortoRefrigeradora
-                        Else
-                            MsgBox("SELECCIONE UN ARTÍCULO")
+            If RBCorto.Checked = False And RBLargo.Checked = False Then
+                MsgBox("POR FAVOR, SELECCIONE EL TIPO DE PLAZO DE EMPEÑO DEL ARTÍCULO") : Exit Sub
+            End If
 
-                        End If
+            If CBTV.Checked = False And CBTelefono.Checked = False And CBLaptop.Checked = False And CBRefrigeradora.Checked Then
+                MsgBox("POR FAVOR, SELECCIONE UN ARTÍCULO") : Exit Sub
+            End If
 
-                    End If
-            End Select
+            'CÁLCULOS
+            If RBCorto.Checked Then
+                If CBTV.Checked And CBTelefono.Checked And CBLaptop.Checked And CBRefrigeradora.Checked Then
+                    PARCIAL(CLIENTE) = CortoTV + CortoTelefono + CortoLaptop + CortoRefrigeradora
+                    DESCUENTO(CLIENTE) = PARCIAL(CLIENTE) - (descuentoCPTVR + descuentoCPTL)
+                    TOTAL(CLIENTE) = PARCIAL(CLIENTE) - DESCUENTO(CLIENTE)
+
+                ElseIf CBTV.Checked And CBRefrigeradora.Checked Then
+                    PARCIAL(CLIENTE) = CortoTV + CortoRefrigeradora
+                    DESCUENTO(CLIENTE) = PARCIAL(CLIENTE) - (descuentoCPTVR)
+                    TOTAL(CLIENTE) = PARCIAL(CLIENTE) - DESCUENTO(CLIENTE)
+
+                ElseIf CBTelefono.Checked And CBLaptop.Checked Then
+                    PARCIAL(CLIENTE) = CortoTelefono + CortoLaptop
+                    DESCUENTO(CLIENTE) = PARCIAL(CLIENTE) - (descuentoCPTL)
+                    TOTAL(CLIENTE) = PARCIAL(CLIENTE) - DESCUENTO(CLIENTE)
+
+                Else
+                    MsgBox("SELECCIONE UN ARTÍCULO")
+                End If
+            End If
+
+            If RBLargo.Checked Then
+                If CBTV.Checked And CBTelefono.Checked And CBLaptop.Checked And CBRefrigeradora.Checked Then
+                    PARCIAL(CLIENTE) = CortoTV + CortoTelefono + CortoLaptop + CortoRefrigeradora
+                    DESCUENTO(CLIENTE) = PARCIAL(CLIENTE) - (descuentoCPTVR + descuentoCPTL)
+                    TOTAL(CLIENTE) = PARCIAL(CLIENTE) - DESCUENTO(CLIENTE)
+
+                ElseIf CBTV.Checked And CBRefrigeradora.Checked Then
+                    PARCIAL(CLIENTE) = LargoTV + LargoRefrigeradora
+                    DESCUENTO(CLIENTE) = PARCIAL(CLIENTE) - (descuentoLPTVR)
+                    TOTAL(CLIENTE) = PARCIAL(CLIENTE) - DESCUENTO(CLIENTE)
+
+                ElseIf CBTelefono.Checked And CBLaptop.Checked Then
+                    PARCIAL(CLIENTE) = LargoTelefono + LargoLaptop
+                    DESCUENTO(CLIENTE) = PARCIAL(CLIENTE) - (descuentoLPTL)
+                    TOTAL(CLIENTE) = PARCIAL(CLIENTE) - DESCUENTO(CLIENTE)
+                Else
+                    MsgBox("SELECCIONE UN ARTÍCULO")
+                End If
+            End If
 
 
-            ListBox1.Items.Add(MATRIZ(CLIENTE, 0))
-            ListBox2.Items.Add(MATRIZ(CLIENTE, 1))
-            ListBox3.Items.Add(MATRIZ(CLIENTE, 2))
-            ListBox4.Items.Add(MATRIZ(CLIENTE, 3))
-            ListBox5.Items.Add(MATRIZ(CLIENTE, 4))
-            ListBox6.Items.Add(MATRIZ(CLIENTE, 5))
-            ListBox7.Items.Add(Round(MATRIZ(CLIENTE, 6), 2))
-            ListBox8.Items.Add(Round(MATRIZ(CLIENTE, 7), 2))
-            ListBox9.Items.Add(Round(MATRIZ(CLIENTE, 8), 2))
+            ListBox1.Items.Add(NOMBRE(CLIENTE))
+            ListBox2.Items.Add(CUI(CLIENTE))
+            ListBox3.Items.Add(DIRECCION(CLIENTE))
+            ListBox4.Items.Add(PLAZO(CLIENTE))
+            ListBox5.Items.Add(ARTICULO(CLIENTE))
+            ListBox6.Items.Add(COSTO(CLIENTE))
+            ListBox7.Items.Add(Round(PARCIAL(CLIENTE), 2))
+            ListBox8.Items.Add(Round(DESCUENTO(CLIENTE), 2))
+            ListBox9.Items.Add(Round(TOTAL(CLIENTE), 2))
 
 
 
@@ -91,7 +112,7 @@ Public Class Form1
     End Sub
 
     Private Sub LIMPIARMATRIZToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LIMPIARMATRIZToolStripMenuItem.Click
-        Call Limpiar_Matriz()
+        'Call Limpiar_Matriz()
     End Sub
 
     Private Sub SALIRToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SALIRToolStripMenuItem.Click

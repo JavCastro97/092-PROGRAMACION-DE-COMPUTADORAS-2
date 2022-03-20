@@ -28,6 +28,8 @@ Partial Class Form1
         Me.LIMPIARMATRIZToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SALIRToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.RBLargo = New System.Windows.Forms.RadioButton()
+        Me.RBCorto = New System.Windows.Forms.RadioButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TextBoxDireccion = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -43,17 +45,15 @@ Partial Class Form1
         Me.CBTelefono = New System.Windows.Forms.CheckBox()
         Me.CBTV = New System.Windows.Forms.CheckBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.ListBox9 = New System.Windows.Forms.ListBox()
+        Me.ListBox8 = New System.Windows.Forms.ListBox()
+        Me.ListBox7 = New System.Windows.Forms.ListBox()
+        Me.ListBox6 = New System.Windows.Forms.ListBox()
         Me.ListBox5 = New System.Windows.Forms.ListBox()
         Me.ListBox4 = New System.Windows.Forms.ListBox()
         Me.ListBox3 = New System.Windows.Forms.ListBox()
         Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.ListBox6 = New System.Windows.Forms.ListBox()
-        Me.ListBox7 = New System.Windows.Forms.ListBox()
-        Me.ListBox8 = New System.Windows.Forms.ListBox()
-        Me.ListBox9 = New System.Windows.Forms.ListBox()
-        Me.RBCorto = New System.Windows.Forms.RadioButton()
-        Me.RBLargo = New System.Windows.Forms.RadioButton()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -114,6 +114,28 @@ Partial Class Form1
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "TIPO DE PLAZO"
+        '
+        'RBLargo
+        '
+        Me.RBLargo.AutoSize = True
+        Me.RBLargo.Location = New System.Drawing.Point(33, 65)
+        Me.RBLargo.Name = "RBLargo"
+        Me.RBLargo.Size = New System.Drawing.Size(62, 17)
+        Me.RBLargo.TabIndex = 1
+        Me.RBLargo.TabStop = True
+        Me.RBLargo.Text = "LARGO"
+        Me.RBLargo.UseVisualStyleBackColor = True
+        '
+        'RBCorto
+        '
+        Me.RBCorto.AutoSize = True
+        Me.RBCorto.Location = New System.Drawing.Point(33, 35)
+        Me.RBCorto.Name = "RBCorto"
+        Me.RBCorto.Size = New System.Drawing.Size(63, 17)
+        Me.RBCorto.TabIndex = 0
+        Me.RBCorto.TabStop = True
+        Me.RBCorto.Text = "CORTO"
+        Me.RBCorto.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -272,6 +294,38 @@ Partial Class Form1
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "RESULTADOS"
         '
+        'ListBox9
+        '
+        Me.ListBox9.FormattingEnabled = True
+        Me.ListBox9.Location = New System.Drawing.Point(737, 49)
+        Me.ListBox9.Name = "ListBox9"
+        Me.ListBox9.Size = New System.Drawing.Size(73, 121)
+        Me.ListBox9.TabIndex = 8
+        '
+        'ListBox8
+        '
+        Me.ListBox8.FormattingEnabled = True
+        Me.ListBox8.Location = New System.Drawing.Point(658, 49)
+        Me.ListBox8.Name = "ListBox8"
+        Me.ListBox8.Size = New System.Drawing.Size(73, 121)
+        Me.ListBox8.TabIndex = 7
+        '
+        'ListBox7
+        '
+        Me.ListBox7.FormattingEnabled = True
+        Me.ListBox7.Location = New System.Drawing.Point(579, 49)
+        Me.ListBox7.Name = "ListBox7"
+        Me.ListBox7.Size = New System.Drawing.Size(73, 121)
+        Me.ListBox7.TabIndex = 6
+        '
+        'ListBox6
+        '
+        Me.ListBox6.FormattingEnabled = True
+        Me.ListBox6.Location = New System.Drawing.Point(500, 49)
+        Me.ListBox6.Name = "ListBox6"
+        Me.ListBox6.Size = New System.Drawing.Size(73, 121)
+        Me.ListBox6.TabIndex = 5
+        '
         'ListBox5
         '
         Me.ListBox5.FormattingEnabled = True
@@ -311,60 +365,6 @@ Partial Class Form1
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.Size = New System.Drawing.Size(115, 121)
         Me.ListBox1.TabIndex = 0
-        '
-        'ListBox6
-        '
-        Me.ListBox6.FormattingEnabled = True
-        Me.ListBox6.Location = New System.Drawing.Point(500, 49)
-        Me.ListBox6.Name = "ListBox6"
-        Me.ListBox6.Size = New System.Drawing.Size(73, 121)
-        Me.ListBox6.TabIndex = 5
-        '
-        'ListBox7
-        '
-        Me.ListBox7.FormattingEnabled = True
-        Me.ListBox7.Location = New System.Drawing.Point(579, 49)
-        Me.ListBox7.Name = "ListBox7"
-        Me.ListBox7.Size = New System.Drawing.Size(73, 121)
-        Me.ListBox7.TabIndex = 6
-        '
-        'ListBox8
-        '
-        Me.ListBox8.FormattingEnabled = True
-        Me.ListBox8.Location = New System.Drawing.Point(658, 49)
-        Me.ListBox8.Name = "ListBox8"
-        Me.ListBox8.Size = New System.Drawing.Size(73, 121)
-        Me.ListBox8.TabIndex = 7
-        '
-        'ListBox9
-        '
-        Me.ListBox9.FormattingEnabled = True
-        Me.ListBox9.Location = New System.Drawing.Point(737, 49)
-        Me.ListBox9.Name = "ListBox9"
-        Me.ListBox9.Size = New System.Drawing.Size(73, 121)
-        Me.ListBox9.TabIndex = 8
-        '
-        'RBCorto
-        '
-        Me.RBCorto.AutoSize = True
-        Me.RBCorto.Location = New System.Drawing.Point(33, 35)
-        Me.RBCorto.Name = "RBCorto"
-        Me.RBCorto.Size = New System.Drawing.Size(63, 17)
-        Me.RBCorto.TabIndex = 0
-        Me.RBCorto.TabStop = True
-        Me.RBCorto.Text = "CORTO"
-        Me.RBCorto.UseVisualStyleBackColor = True
-        '
-        'RBLargo
-        '
-        Me.RBLargo.AutoSize = True
-        Me.RBLargo.Location = New System.Drawing.Point(35, 74)
-        Me.RBLargo.Name = "RBLargo"
-        Me.RBLargo.Size = New System.Drawing.Size(62, 17)
-        Me.RBLargo.TabIndex = 1
-        Me.RBLargo.TabStop = True
-        Me.RBLargo.Text = "LARGO"
-        Me.RBLargo.UseVisualStyleBackColor = True
         '
         'Form1
         '
