@@ -9,7 +9,7 @@
     'El proceso será para 5 estudiantes
     Public NOMBRE(7) As String
     Public NIT(7) As Integer
-    Public DIAS(7) As Double
+    Public DIAS(7) As Byte
     Public HABITACION(7) As String
     Public PAGO(7) As String
     Public SUBTOTAL(7) As Double
@@ -17,16 +17,20 @@
     Public RECARGO(7) As Double
     Public TOTAL(7) As Double
 
+    Public Desc As Double
+    Public Rcg As Double
+    Public Impuesto As Double
+
     'Precios de las habitaciones por día hospedado.
     Public Const PSencilla = 250
     Public Const PDoble = 400
     Public Const PCabaña = 650
     Public Const Descuento1 = 0.15 'Descuento por pago en efectivo
-    Public Const Descuento2 = 0.03 'Recargo por pago con tarjeta de crédito/débito
+    Public Const Recargo1 = 0.03 'Recargo por pago con tarjeta de crédito/débito
     Public Const Descuento3 = 0 'No hay descuento ni recargo por Transferencia o Depósito
 
 
-    Public Sub MOSTRAR()
+    Sub MOSTRAR_DATOS()
         'Se limpia primero el datagrid por si hubieran datos, así no se duplican los mismos
         Form1.DataGridView1.Rows.Clear()
         For I = 0 To 6
@@ -35,15 +39,14 @@
             'mostrar algo que es Nulo o No existe
             'Se toma el primer vector para hacer la verificación, porque los demás estarán igual de llenos o vacíos
             If (NIT(I) <> Nothing) Then
-                Form1.DataGridView1.Rows.Add((NOMBRE(I)), NIT(I), Str(DIAS(I)), HABITACION(I), PAGO(I), Str(SUBTOTAL(I)), Str(DESCUENTO(I)), Str(RECARGO(I)), Str(TOTAL(I)))
+                Form1.DataGridView1.Rows.Add((NOMBRE(I)), NIT(I), DIAS(I), HABITACION(I), PAGO(I), SUBTOTAL(I), DESCUENTO(I), RECARGO(I), TOTAL(I))
             Else
-                'Si están vacíos, se realiza una salida forzada del ciclo For con la siguiente instrucción
-                Exit For
+                Exit For   'Si están vacíos, se realiza una salida forzada del ciclo For con la siguiente instrucción
             End If
         Next I
     End Sub
 
-    Sub CONSULTAR()
+    Sub CONSULTAR_DATOS()
         Dim Existe As Boolean = False
 
         'se inicializa la variable I en cero para empezar desde la primera posición del vector del carnet
@@ -96,6 +99,46 @@
         End If
     End Sub
 
+    Sub ELIMINAR_DATOS()
+        If MsgBox("¿DESEA ELIMINAR EL REGISTRO ENCONTRADO", vbQuestion + vbYesNo, "MENSAJE DE VERIFICACIÓN DE ELIMINACIÓN DE DATOS") = vbYes Then
+            NOMBRE(FILA) = Nothing
+            NIT(FILA) = Nothing
+            DIAS(FILA) = Nothing
+            HABITACION(FILA) = Nothing
+            SUBTOTAL(FILA) = Nothing
+            DESCUENTO(FILA) = Nothing
+            RECARGO(FILA) = Nothing
+            TOTAL(FILA) = Nothing
+
+            For I = FILA To 6
+                NOMBRE(I) = NOMBRE(I + 1)
+                NIT(I) = NIT(I + 1)
+                DIAS(I) = DIAS(I + 1)
+                HABITACION(I) = HABITACION(I + 1)
+                SUBTOTAL(I) = SUBTOTAL(I + 1)
+                DESCUENTO(I) = DESCUENTO(I + 1)
+                RECARGO(I) = RECARGO(I + 1)
+                TOTAL(I) = TOTAL(I + 1)
+            Next
+            I = 0
+            While NIT(FILA) <> Nothing
+                I = I + 1
+            End While
+
+            NOMBRE(FILA) = Nothing
+            NIT(FILA) = Nothing
+            DIAS(FILA) = Nothing
+            HABITACION(FILA) = Nothing
+            SUBTOTAL(FILA) = Nothing
+            DESCUENTO(FILA) = Nothing
+            RECARGO(FILA) = Nothing
+            TOTAL(FILA) = Nothing
+
+        End If
+        LIMPIAR_ENTRADAS()
+        Form1.DataGridView1.Rows.Clear()
+
+    End Sub
     Sub LIMPIAR_VECTORES()
 
     End Sub

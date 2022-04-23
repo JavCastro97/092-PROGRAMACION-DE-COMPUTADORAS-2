@@ -39,10 +39,10 @@ Partial Class Form1
         Me.TBNombre = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -65,7 +65,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CALCULAR, Me.MOSTRAR, Me.CONSULTAR, Me.ELIMINAR, Me.LIMPIAR})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(882, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(886, 24)
         Me.MenuStrip1.TabIndex = 10
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -114,7 +114,7 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.TBNombre)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(24, 72)
+        Me.GroupBox1.Location = New System.Drawing.Point(36, 33)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(233, 185)
         Me.GroupBox1.TabIndex = 11
@@ -191,12 +191,30 @@ Partial Class Form1
         Me.GroupBox2.Controls.Add(Me.ComboBox1)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Location = New System.Drawing.Point(263, 72)
+        Me.GroupBox2.Location = New System.Drawing.Point(275, 33)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(309, 113)
         Me.GroupBox2.TabIndex = 12
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "DATOS DE HOSPEDAJE"
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Items.AddRange(New Object() {"EFECTIVO", "TARJETA DE CREDITO/DEBITO", "TRANSFERENCIA", "DEPOSITO"})
+        Me.ComboBox2.Location = New System.Drawing.Point(170, 59)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox2.TabIndex = 6
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"SENCILLA", "DOBLE", "CABAÑA"})
+        Me.ComboBox1.Location = New System.Drawing.Point(23, 59)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 5
         '
         'Label5
         '
@@ -216,38 +234,20 @@ Partial Class Form1
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "TIPO DE HABITACIÓN"
         '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"SENCILLA", "DOBLE", "CABAÑA"})
-        Me.ComboBox1.Location = New System.Drawing.Point(23, 59)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 5
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"EFECTIVO", "TARJETA", "TRANSFERENCIA", "DEPOSITO"})
-        Me.ComboBox2.Location = New System.Drawing.Point(170, 59)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox2.TabIndex = 6
-        '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column5, Me.Column6, Me.Column7, Me.Column4, Me.Column8})
-        Me.DataGridView1.Location = New System.Drawing.Point(24, 270)
+        Me.DataGridView1.Location = New System.Drawing.Point(36, 224)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(846, 175)
+        Me.DataGridView1.Size = New System.Drawing.Size(838, 175)
         Me.DataGridView1.TabIndex = 13
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Impact", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(18, 35)
+        Me.Label6.Location = New System.Drawing.Point(635, 33)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(239, 34)
         Me.Label6.TabIndex = 14
@@ -263,11 +263,13 @@ Partial Class Form1
         '
         Me.Column2.HeaderText = "NIT"
         Me.Column2.Name = "Column2"
+        Me.Column2.Width = 75
         '
         'Column3
         '
         Me.Column3.HeaderText = "DÍAS"
         Me.Column3.Name = "Column3"
+        Me.Column3.Width = 75
         '
         'Column5
         '
@@ -281,13 +283,14 @@ Partial Class Form1
         '
         'Column7
         '
-        Me.Column7.HeaderText = "DESCUENTO"
+        Me.Column7.HeaderText = "SUBTOTAL"
         Me.Column7.Name = "Column7"
         '
         'Column4
         '
-        Me.Column4.HeaderText = "RECARGO"
+        Me.Column4.HeaderText = "DESCUENTO_RECARGO"
         Me.Column4.Name = "Column4"
+        Me.Column4.Width = 150
         '
         'Column8
         '
@@ -300,7 +303,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(882, 457)
+        Me.ClientSize = New System.Drawing.Size(886, 406)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.GroupBox2)
