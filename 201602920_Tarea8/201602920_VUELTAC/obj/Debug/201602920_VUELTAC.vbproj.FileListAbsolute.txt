@@ -1,0 +1,13 @@
+C:\Users\DELL\Desktop\AÑO 2022\1ER. SEMESTRE 2022\Programación de Computadoras 092\TAREAS\201602920_Tarea8\201602920_VUELTAC\bin\Debug\201602920_VUELTAC.exe.config
+C:\Users\DELL\Desktop\AÑO 2022\1ER. SEMESTRE 2022\Programación de Computadoras 092\TAREAS\201602920_Tarea8\201602920_VUELTAC\bin\Debug\201602920_VUELTAC.exe
+C:\Users\DELL\Desktop\AÑO 2022\1ER. SEMESTRE 2022\Programación de Computadoras 092\TAREAS\201602920_Tarea8\201602920_VUELTAC\bin\Debug\201602920_VUELTAC.pdb
+C:\Users\DELL\Desktop\AÑO 2022\1ER. SEMESTRE 2022\Programación de Computadoras 092\TAREAS\201602920_Tarea8\201602920_VUELTAC\bin\Debug\201602920_VUELTAC.xml
+C:\Users\DELL\Desktop\AÑO 2022\1ER. SEMESTRE 2022\Programación de Computadoras 092\TAREAS\201602920_Tarea8\201602920_VUELTAC\obj\Debug\201602920_VUELTAC.vbproj.AssemblyReference.cache
+C:\Users\DELL\Desktop\AÑO 2022\1ER. SEMESTRE 2022\Programación de Computadoras 092\TAREAS\201602920_Tarea8\201602920_VUELTAC\obj\Debug\201602920_VUELTAC.vbproj.SuggestedBindingRedirects.cache
+C:\Users\DELL\Desktop\AÑO 2022\1ER. SEMESTRE 2022\Programación de Computadoras 092\TAREAS\201602920_Tarea8\201602920_VUELTAC\obj\Debug\_201602920_VUELTAC.Form1.resources
+C:\Users\DELL\Desktop\AÑO 2022\1ER. SEMESTRE 2022\Programación de Computadoras 092\TAREAS\201602920_Tarea8\201602920_VUELTAC\obj\Debug\_201602920_VUELTAC.Resources.resources
+C:\Users\DELL\Desktop\AÑO 2022\1ER. SEMESTRE 2022\Programación de Computadoras 092\TAREAS\201602920_Tarea8\201602920_VUELTAC\obj\Debug\201602920_VUELTAC.vbproj.GenerateResource.cache
+C:\Users\DELL\Desktop\AÑO 2022\1ER. SEMESTRE 2022\Programación de Computadoras 092\TAREAS\201602920_Tarea8\201602920_VUELTAC\obj\Debug\201602920_VUELTAC.vbproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\AÑO 2022\1ER. SEMESTRE 2022\Programación de Computadoras 092\TAREAS\201602920_Tarea8\201602920_VUELTAC\obj\Debug\201602920_VUELTAC.exe
+C:\Users\DELL\Desktop\AÑO 2022\1ER. SEMESTRE 2022\Programación de Computadoras 092\TAREAS\201602920_Tarea8\201602920_VUELTAC\obj\Debug\201602920_VUELTAC.xml
+C:\Users\DELL\Desktop\AÑO 2022\1ER. SEMESTRE 2022\Programación de Computadoras 092\TAREAS\201602920_Tarea8\201602920_VUELTAC\obj\Debug\201602920_VUELTAC.pdb
